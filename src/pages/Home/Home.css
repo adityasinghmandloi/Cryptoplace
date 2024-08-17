@@ -1,0 +1,131 @@
+.home {
+    font-family: Arial, sans-serif; /* Font family */
+    padding: 0px 10px; /* Space inside the container */
+    padding-bottom: 100px;
+    
+}
+
+.hero {
+    max-width: 600px;
+    margin: 80px auto;
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    flex-direction: column;
+    gap: 30px;
+    
+}
+
+.hero h1{
+    font-size: max(4vw, 36px);
+}
+
+.hero p{
+    width: 75%;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.hero form{
+    background-color: #ffff; /* Semi-transparent white background */
+    padding: 8px; /* Space inside the form */
+    width: 80%;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero input{
+    flex: 1;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+}
+
+.hero button{
+    background-color: #6819de; /* Primary blue color */
+    color: white; /* White text color */
+    padding: 10px 30px; /* Padding inside the button */
+    border: none; /* Remove default borders */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 16px; /* Larger font size for prominence */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+
+}
+
+.crypto-table{
+    max-width: 800px; /* Full width of the container */
+    /* Remove space between table cells */
+    margin: auto; /* Add space above and below the table */
+    border-radius: 15px;
+    background: linear-gradient(rgba(84, 3, 255, 0.15), rgba(105, 2, 153, 0.15));
+}
+
+.table-layout{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
+    /* Limit the width of the container */
+     /* Center the container and add space above and below */
+    padding: 15px 20px; /* Add padding around the container */
+    /* Match the table's rounded corners */
+     /* Ensure the content doesn't overflow */
+     align-items: center;
+     border-bottom: 1px solid #3c3c3c;
+}
+
+.market-cap{
+    text-align: right;
+}
+ 
+.table-layout:last-child{
+    border: none;
+
+}
+
+.table-layout div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-layout div img{
+    width: 35px;
+} 
+
+.table-layout .green{
+    color: #00D515;
+    text-align: center;
+}
+
+.table-layout .red{
+    color: #e90b0b;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+    .table-layout{
+        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    }
+    .market-cap{
+        display: none;
+    }
+
+}
+
+@media (max-width: 500px){
+    .table-layout{
+        width: 25px;
+    }
+    .market-cap{
+        font-size: 13px;
+    }
+    .hero form input{
+        width: 100px;
+    }
+}
