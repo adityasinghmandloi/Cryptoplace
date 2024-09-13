@@ -100,3 +100,18 @@
         width: 12px;
     }
 }
+
+.user-info {
+  display: flex;
+  justify-content: center; /* Center the avatar if needed */
+  align-items: center;
+  padding: 5px; /* Adjust padding if needed */
+}
+
+.user-avatar {
+  width: 40px; /* Adjust size according to your design */
+  height: 40px;
+  border-radius: 50%;
+  border: none; /* Remove border if present */
+  background-color: transparent; /* Ensure the background is transparent */
+}

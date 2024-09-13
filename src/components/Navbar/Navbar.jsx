@@ -5,8 +5,12 @@ import arrow_icon from "../../assets/arrow_icon.png";
 import { useContext } from "react";
 import { CoinContext } from "../../context/CoinContext";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { setCurrency } = useContext(CoinContext);
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   const currecyhandler = (event) => {
     switch (event.target.value) {
@@ -47,9 +51,34 @@ const Navbar = () => {
           <option value="eur">EUR</option>
           <option value="inr">INR</option>
         </select>
-        <button>
-          Sign up <img src={arrow_icon} alt="" />
-        </button>
+
+        <ul>
+          <ul>
+            {isAuthenticated && (
+              <li className="user-info">
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="user-avatar"
+                />
+              </li>
+            )}
+          </ul>
+
+          {isAuthenticated ? (
+            <button
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+            >
+              Log Out <img src={arrow_icon} alt="Arrow icon" />
+            </button>
+          ) : (
+            <button onClick={loginWithRedirect}>
+              Log In <img src={arrow_icon} alt="Arrow icon" />
+            </button>
+          )}
+        </ul>
       </div>
     </div>
   );
